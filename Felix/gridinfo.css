@@ -13,14 +13,14 @@
 .grid {
     border-radius: 0.5rem;
     padding-block: 1rem;
-    
+
 
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(7, 1fr);
 
-    grid-template-areas: 
+    grid-template-areas:
 
     'one one one two two'
     'one one one two two'
@@ -55,18 +55,22 @@
     border-radius: 0.3rem;
 }
 
+.vertretungsplan {
+  width: 10%;
+}
+
 .img {
     background-color: #777;
 
     background-image: url(img/droste-huelshoff-gymnasium.jpg);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
-    background-size: 60%; 
+    background-size: 60%;
 
     background-image: url(Bilder/urban-jungle-texture-num5.png);
     background-blend-mode: multiply;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
 
     background-attachment: fixed;
 }
