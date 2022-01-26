@@ -6,7 +6,6 @@
 }
 
 .body {
-    background: #222327;
     /*font-family: "Poppins", sans-serif;*/
 }
 
@@ -25,10 +24,11 @@
     'one one one two two'
     'one one one two two'
     'three three three two two'
+    'three three three two two'
     'four four four two two'
     'four four four two two'
     'four four four two two'
-    'four four four two two'
+    
 }
 
 .test:nth-child(1) {
