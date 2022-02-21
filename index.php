@@ -11,12 +11,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
+    <?php
+    session_start()
+    ?>
 
 
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ccd3d8;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #ccd3d8;">
         <a class="navbar-brand" href="#">
             <img src="https://flyclipart.com/thumb2/music-notes-png-images-free-download-note-clef-png-74183.png" width="50" height="50" class="d-inline-block" alt="">
             Schulnetzwerk
@@ -51,11 +54,12 @@
                 </a>
             </li>
             <li class="nav-item px-3">
-                <a>
-                    <span class="icon"><ion-icon name="contact"></ion-icon></span>
-                    <span class="text">Login</span>
+                <a">
+
+                    <a class="nav-link" href="./login/login.php"> <span class="icon"><ion-icon name="contact"></ion-icon>Login</span></a>
                 </a>
             </li>
+
           </ul>
         </div>
       </nav>
@@ -108,7 +112,7 @@
               <section class="highlight-clean">
                 <div class="container">
                   <div class="intro">
-                    <h2 class="text-center">Willkommen auf dem Schulnetzwerk der Droste </h2>
+                    <h2 class="text-center">Willkommen <?php echo($_SESSION["username"])?>auf dem Schulnetzwerk der Droste </h2>
                     <p class="text-center">Wir freuen uns...</p>
                   </div>
                   <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a><button class="btn btn-light" type="button">Register</button></div>
@@ -123,7 +127,7 @@
             <div class="container py-5 px-4">
               <!-- For demo purpose-->
               <header class="text-center">
-                <h1 class="display-4 text-white">Bootstrap Chat</h1>
+                <h1 class="display-4 text-white">Live Chat</h1>
               </header>
 
               <div class="row rounded-lg overflow-hidden shadow">

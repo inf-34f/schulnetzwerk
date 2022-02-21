@@ -28,7 +28,7 @@
     'four four four two two'
     'four four four two two'
     'four four four two two'
-    
+
 }
 
 .test:nth-child(1) {
@@ -49,7 +49,7 @@
 }
 
 .test {
-    background: black;
+    background: gray;
     color: white;
     padding: 2rem;
     border-radius: 0.3rem;
