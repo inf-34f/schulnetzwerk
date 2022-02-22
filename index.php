@@ -159,7 +159,13 @@
               <section class="highlight-clean">
                 <div class="container">
                   <div class="intro">
-                    <h2 class="text-center">Willkommen <?php echo($_SESSION["username"])?>auf dem Schulnetzwerk der Droste </h2>
+                    <h2 class="text-center">Willkommen<?php 
+                    // $_SESSION["username"] = "Tom";
+                    if (!$_SESSION)
+                    echo("");
+                    else
+                    echo(" ".$_SESSION["username"].",");
+                    ?> auf dem Schulnetzwerk der Droste </h2>
                     <p class="text-center">Wir freuen uns...</p>
                   </div>
                   <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a><button class="btn btn-light" type="button">Register</button></div>
