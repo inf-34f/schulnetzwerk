@@ -345,8 +345,6 @@
                 <div class="footer-col">
                     <h4> social links </h4>
                     <div class="footer-social-links">
-                        <a href="https://www.instagram.com/zt1peewee/"> <ion-icon name="logo-instagram"></ion-icon> </a>
-                        <a href="https://twitter.com/Just_Jadon"> <ion-icon name="logo-twitter"></ion-icon> </a>
                         <a href="https://www.droste-gymnasium-berlin.de/"> <ion-icon name="globe"></ion-icon> </a>
                     </div>
                 </div>
