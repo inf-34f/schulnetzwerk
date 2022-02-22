@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inconsolata:wght@200;300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #000;
+    min-height: 200vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+    z-index: 100000;
+}
+
+header .logo {
+    position: relative;
+    font-family: 'Inconsolata';
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+    margin: 5px;
+}
+
+header ul {
+    display: flex;
+}
+
+header ul li {
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 70px;
+    z-index: 1;
+}
+
+header ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-weight: 500;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(img/IMG_1616.jpg);
+    background-size: cover;
+}
+
+header.sticky {
+    padding: 5px 100px;
+    background: #fff;
+    box-shadow: 1px solid black;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    box-shadow: 0 0 1em black;
+}
+
+header.sticky .logo {
+    color: #000;
+    font-size: 30;
+    text-transform: none;
+}
+header.sticky ul li a {
+    color: #000;
+}
+
+header.sticky ul li a .icon {
+    color: black;
+}
+
+header.sticky ul li a .text {
+    color: black;
+}
+
+header ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.4s;
+    color: #fff;
+}
+
+header ul li:hover .icon {
+    transform: translateY(-15px);
+}
+
+header ul li a .text {
+    position: absolute;
+    color: #fff;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+header ul li:hover .text {
+    opacity: 1;
+}
+

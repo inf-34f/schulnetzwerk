@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <title> Droste Schulnetzwerk </title>
-        <link rel="stylesheet" type="text/css" href="NavIcon.css">
         <link rel="stylesheet" type="text/css" href="gridinfo.css">
         <link rel="stylesheet" type="text/css" href="footerinfo.css">
         <link rel="stylesheet" type="text/css" href="chat.css">
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="fixnav.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+ 
     </head>
     <?php
     session_start()
@@ -19,6 +19,52 @@
 
 <body>
 
+<header>
+    <a href="" class="logo">Schulnetzwerk</a>
+    <ul>
+        <li class="list">
+            <a href="#">
+                <span class="icon"><ion-icon name="home"></ion-icon></span>
+                <span class="text">Home</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon"><ion-icon name="person"></ion-icon></span>
+                <span class="text">Profile</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon"><ion-icon name="text"></ion-icon></span>
+                <span class="text">Messages</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon"><ion-icon name="settings"></ion-icon></span>
+                <span class="text">Settings</span>
+            </a>
+        </li>
+        <li class="list">
+            <a href="#">
+                <span class="icon"><ion-icon name="contact"></ion-icon></span>
+                <span class="text">Login</span>
+            </a>
+        </li>
+    </ul>
+</header>
+<section class="banner"></section>
+
+<script type="text/javascript">
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+
+
+<!--
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #ccd3d8;">
         <a class="navbar-brand" href="#">
             <img src="https://flyclipart.com/thumb2/music-notes-png-images-free-download-note-clef-png-74183.png" width="50" height="50" class="d-inline-block" alt="">
@@ -63,6 +109,7 @@
           </ul>
         </div>
       </nav>
+-->
 <!--
 <nav>
     <div class="navigation">
