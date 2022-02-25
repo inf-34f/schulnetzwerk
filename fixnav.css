@@ -9,7 +9,7 @@
 }
 
 body {
-    background: #000;
+    background: white;
     min-height: 200vh;
 }
 
@@ -36,7 +36,7 @@ header .logo {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.6s;
-    margin: 5px;
+    
 }
 
 header ul {
@@ -81,7 +81,7 @@ header.sticky {
 header.sticky .logo {
     color: #000;
     font-size: 30;
-    text-transform: none;
+    text-transform: uppercase;
 }
 header.sticky ul li a {
     color: #000;
@@ -122,5 +122,18 @@ header ul li a .text {
 
 header ul li:hover .text {
     opacity: 1;
+}
+
+@media (max-width: 50em){
+    header {
+        display: block;
+    }
+    header .logo {
+        text-align: center;
+    }
+    header ul {
+        text-align: center;
+        justify-content: center;
+    }
 }
 

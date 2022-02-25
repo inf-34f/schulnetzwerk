@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8">
         <title> Droste Schulnetzwerk </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="gridinfo.css">
         <link rel="stylesheet" type="text/css" href="footerinfo.css">
         <link rel="stylesheet" type="text/css" href="chat.css">
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
         <link rel="stylesheet" type="text/css" href="fixnav.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- 
+
+
     </head>
     <?php
     session_start()
@@ -17,10 +18,11 @@
 
 
 
+
 <body>
 
 <header>
-    <a href="" class="logo">Schulnetzwerk</a>
+    <p class="logo">Schulnetzwerk</p>
     <ul>
         <li class="list">
             <a href="#">
@@ -47,7 +49,7 @@
             </a>
         </li>
         <li class="list">
-            <a href="#">
+            <a href="login/login.php">
                 <span class="icon"><ion-icon name="contact"></ion-icon></span>
                 <span class="text">Login</span>
             </a>
@@ -64,94 +66,6 @@
 </script>
 
 
-<!--
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light" style="background-color: #ccd3d8;">
-        <a class="navbar-brand" href="#">
-            <img src="https://flyclipart.com/thumb2/music-notes-png-images-free-download-note-clef-png-74183.png" width="50" height="50" class="d-inline-block" alt="">
-            Schulnetzwerk
-          </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active px-3">
-                <a>
-                    <span class="icon"><ion-icon name="home"></ion-icon></span>
-                    <span class="text">Home</span>
-                </a>
-            </li>
-            <li class="nav-item px-3">
-                <a>
-                    <span class="icon"><ion-icon name="person"></ion-icon></span>
-                    <span class="text">Profile</span>
-                </a>
-            </li>
-            <li class="nav-item px-3">
-                <a>
-                    <span class="icon"><ion-icon name="text"></ion-icon></span>
-                    <span class="text">Messages</span>
-                </a>
-            </li>
-            <li class="nav-item px-3">
-                <a>
-                    <span class="icon"><ion-icon name="settings"></ion-icon></span>
-                    <span class="text">Settings</span>
-                </a>
-            </li>
-            <li class="nav-item px-3">
-                <a">
-
-                    <a class="nav-link" href="./login/login.php"> <span class="icon"><ion-icon name="contact"></ion-icon>Login</span></a>
-                </a>
-            </li>
-
-          </ul>
-        </div>
-      </nav>
--->
-<!--
-<nav>
-    <div class="navigation">
-       <p> Header </p>
-            <ul class="ul">
-                <li class="list">
-                    <a href="#home">
-                        <span class="icon"><ion-icon name="home"></ion-icon></span>
-                        <span class="text">Home</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="#">
-                        <span class="icon"><ion-icon name="person"></ion-icon></span>
-                        <span class="text">Profile</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="#">
-                        <span class="icon"><ion-icon name="text"></ion-icon></span>
-                        <span class="text">Messages</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="#">
-                        <span class="icon"><ion-icon name="settings"></ion-icon></span>
-                        <span class="text">Settings</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="#">
-                        <span class="icon"><ion-icon name="contact"></ion-icon></span>
-                        <span class="text">Login</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-</nav>
-
--->
-
-
     <main class="grid" id="home">
 
         <article class="test img">
@@ -166,9 +80,8 @@
                     else
                     echo(" ".$_SESSION["username"].",");
                     ?> auf dem Schulnetzwerk der Droste </h2>
-                    <p class="text-center">Wir freuen uns...</p>
                   </div>
-                  <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a><button class="btn btn-light" type="button">Register</button></div>
+                  <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a><a href="login/login.php"><button class="btn btn-light" type="button">Register</button></a></div>
                 </div>
               </section>
 
@@ -179,9 +92,7 @@
           <div class="bootstrap_chat">
             <div class="container py-5 px-4">
               <!-- For demo purpose-->
-              <header class="text-center">
-                <h1 class="display-4 text-white">Live Chat</h1>
-              </header>
+
 
               <div class="row rounded-lg overflow-hidden shadow">
                 <!-- Users box-->
@@ -256,7 +167,7 @@
                     <div class="input-group">
                       <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
                       <div class="input-group-append">
-                        <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+                        <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane">Senden</i></button>
                       </div>
                     </div>
                   </form>
