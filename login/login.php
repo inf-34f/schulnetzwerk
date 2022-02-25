@@ -198,7 +198,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
 
     <div class="container">
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form" id="login">
+        <form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="post" class="form" id="login">
             <h1 class="form__title">Anmeldung</h1>
             <div class="form__message form__message--error">
                 <?php echo $log_login_err; ?>
@@ -230,7 +230,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form form--hidden" id="createAccount">
+        <form action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="post" class="form form--hidden" id="createAccount">
             <h1 class="form__title">Registrieren</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
