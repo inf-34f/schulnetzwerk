@@ -3,6 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title> Droste Schulnetzwerk </title>
+
+
+        <link rel="icon" type="image/x-icon" href="icon.png">
+
+        <!-- CSS einbinden --> 
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="gridinfo.css">
         <link rel="stylesheet" type="text/css" href="footerinfo.css">
@@ -13,13 +19,7 @@
 
     </head>
     <?php
-    session_start();
-
-    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-      $loggedin = true;
-    }else{
-        $loggedin = false; 
-      }
+    session_start()
     ?>
 
 
@@ -28,8 +28,7 @@
 <body>
 
 <header>
-    <a href="" class="logo">
-      Schulnetzwerk</a>
+    <p class="logo">Schulnetzwerk</p>
     <ul>
         <li class="list">
             <a href="#">
@@ -38,18 +37,9 @@
             </a>
         </li>
         <li class="list">
-          <?php
-            if(!$loggedin){
-              $message="Profil";
-              $href="login/login.php";
-            }else{
-              $message=$_SESSION["username"];
-              $href="#";
-            }
-          ?>
-            <a href="<?php echo $href; ?>">
+            <a href="#">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <span class="text"><?php echo $message; ?></span>
+                <span class="text">Profile</span>
             </a>
         </li>
         <li class="list">
@@ -65,22 +55,9 @@
             </a>
         </li>
         <li class="list">
-        <?php
-
-            if(!$loggedin){
-              $message="Anmelden";
-              $icon="log-in";
-              $href="login/login.php";
-            }else{
-              $message="Abmelden";
-              $icon="log-out";
-              $href="login/logout.php";
-            }
-
-            ?>
-            <a href="<?php echo $href; ?>">
-                <span class="icon"><ion-icon name='<?php echo $icon; ?>'></ion-icon></span>
-                <span class="text"><?php echo $message; ?></span>
+            <a href="login/login.php">
+                <span class="icon"><ion-icon name="contact"></ion-icon></span>
+                <span class="text">Login</span>
             </a>
         </li>
     </ul>
@@ -110,18 +87,7 @@
                     echo(" ".$_SESSION["username"].",");
                     ?> auf dem Schulnetzwerk der Droste </h2>
                   </div>
-                  <?php
-
-                  if($loggedin){
-                    $message="Profil";
-
-                  }else{
-                    $message="Anmeldung";
-                  }
-
-                  ?>
-                  <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a>
-                  <button class="btn btn-light" type="button"><?php echo $message; ?></button>
+                  <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a><a href="login/login.php"><button class="btn btn-light" type="button">Register</button></a></div>
                 </div>
               </section>
 
@@ -231,8 +197,8 @@
                   <div class="row justify-content-center features">
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
-                        <h3 class="name">1</h3>
-                        <p class="description">1</p><a class="learn-more" href="#">Anzeigen »</a>
+                        <h3 class="name">testfile</h3>
+                        <p class="description">1</p><a class="learn-more" href="humans.txt" download> <img src="img/datei_symbol.png"></a>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
