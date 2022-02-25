@@ -32,6 +32,30 @@
 
 }
 
+@media (max-width: 50em) {
+    .grid {
+        gap: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(11, 1fr);
+
+        grid-template-areas: 
+        'one one one'
+        'one one one'
+        'three three three'
+        'three three three'
+        'three three three'
+        'four four four'
+        'four four four'
+        /* 'four four four' */
+        'two two two'
+        'two two two'
+        'two two two'
+        'two two two'
+        /* 'two two two' */
+        ;
+    }
+}
+
 .test:nth-child(1) {
     grid-area: one;
 }
