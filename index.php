@@ -13,7 +13,13 @@
 
     </head>
     <?php
-    session_start()
+    session_start();
+
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+      $loggedin = true;
+    }else{
+        $loggedin = false; 
+      }
     ?>
 
 
@@ -22,7 +28,8 @@
 <body>
 
 <header>
-    <p class="logo">Schulnetzwerk</p>
+    <a href="" class="logo">
+      Schulnetzwerk</a>
     <ul>
         <li class="list">
             <a href="#">
@@ -31,9 +38,18 @@
             </a>
         </li>
         <li class="list">
-            <a href="#">
+          <?php
+            if(!$loggedin){
+              $message="Profil";
+              $href="login/login.php";
+            }else{
+              $message=$_SESSION["username"];
+              $href="#";
+            }
+          ?>
+            <a href="<?php echo $href; ?>">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <span class="text">Profile</span>
+                <span class="text"><?php echo $message; ?></span>
             </a>
         </li>
         <li class="list">
@@ -49,9 +65,22 @@
             </a>
         </li>
         <li class="list">
-            <a href="login/login.php">
-                <span class="icon"><ion-icon name="contact"></ion-icon></span>
-                <span class="text">Login</span>
+        <?php
+
+            if(!$loggedin){
+              $message="Anmelden";
+              $icon="log-in";
+              $href="login/login.php";
+            }else{
+              $message="Abmelden";
+              $icon="log-out";
+              $href="login/logout.php";
+            }
+
+            ?>
+            <a href="<?php echo $href; ?>">
+                <span class="icon"><ion-icon name='<?php echo $icon; ?>'></ion-icon></span>
+                <span class="text"><?php echo $message; ?></span>
             </a>
         </li>
     </ul>
@@ -81,7 +110,18 @@
                     echo(" ".$_SESSION["username"].",");
                     ?> auf dem Schulnetzwerk der Droste </h2>
                   </div>
-                  <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a><a href="login/login.php"><button class="btn btn-light" type="button">Register</button></a></div>
+                  <?php
+
+                  if($loggedin){
+                    $message="Profil";
+
+                  }else{
+                    $message="Anmeldung";
+                  }
+
+                  ?>
+                  <div class="buttons"><a class="btn btn-primary" role="button" href="#">Aktuelles</a>
+                  <button class="btn btn-light" type="button"><?php echo $message; ?></button>
                 </div>
               </section>
 
