@@ -5,7 +5,7 @@
         <title> Droste Schulnetzwerk </title>
 
 
-        <link rel="icon" type="image/x-icon" href="icon.png">
+        <link rel="icon" type="image/x-icon" href="img/icon.png">
 
         <!-- CSS einbinden --> 
 

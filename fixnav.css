@@ -144,5 +144,11 @@ header ul li:hover .text {
     header.sticky {
         padding: 5px 50px;
     }
+    header ul li a .text {
+        opacity: 1;
+    }
+    header ul li .icon {
+        transform: translateY(-15px);
+    }
 }
 
