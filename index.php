@@ -20,6 +20,11 @@
     </head>
     <?php
     session_start()
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+      $loggedin = true;
+    }else{
+        $loggedin = false; 
+      }
     ?>
 
 
@@ -43,9 +48,9 @@
             </a>
         </li>
         <li class="list">
-            <a href="#">
+            <a href="./upload.php">
                 <span class="icon"><ion-icon name="text"></ion-icon></span>
-                <span class="text">Messages</span>
+                <span class="text">Upload</span>
             </a>
         </li>
         <li class="list">
@@ -55,10 +60,25 @@
             </a>
         </li>
         <li class="list">
-            <a href="login/login.php">
+        <?php 
+
+
+        if(!$loggedin){
+          $message="Profil";
+          $href="login/login.php";
+        }else{
+          $message=$_SESSION["username"];
+          $href="#";
+        }
+        ?>
+        
+        <a href="<?php echo $href;?>"> 
                 <span class="icon"><ion-icon name="contact"></ion-icon></span>
                 <span class="text">Login</span>
             </a>
+
+
+
         </li>
     </ul>
 </header>
@@ -198,19 +218,19 @@
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">testfile</h3>
-                        <p class="description">1</p><a class="learn-more" href="humans.txt" download> <img src="img/datei_symbol.png"></a>
+                        <p class="description">lul.pptx</p><a class="learn-more" href="./uploads/lul.pptx" download> <img src="download.png"></a>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">2</h3>
-                        <p class="description">3</p><a class="learn-more" href="#">Anzeigen »<br /></a>
+                        <p class="description">2</p><a class="learn-more" href="./uploads/lul.pptx"><img src="download.png"></a>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">3 </h3>
-                        <p class="description">2</p><a class="learn-more" href="#">Anzeigen »<br /></a>
+                        <p class="description">3</p><a class="learn-more" href="./uploads/lul.pptx"><img src="download.png"></a>
                       </div>
                     </div>
                   </div>

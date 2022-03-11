@@ -1,4 +1,4 @@
-
+<?php require("mysql.php"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +71,7 @@
   <form action="upload.php" method="post" enctype="multipart/form-data">
     Wähle die Datei aus:
     <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input type="submit" value="Hochladen" name="submit">
   </form>
 
 </main>
@@ -84,16 +84,8 @@
 
 
 
-define('DB_SERVER', '47.254.133.75');
-define('DB_USERNAME', 'schulnetzwerk');
-define('DB_PASSWORD', 'CDOUWqoAsWUHUbtl');
-define('DB_NAME', 'schulnetzwerk');
- 
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
+
+
 
 
 
@@ -132,7 +124,15 @@ if ($uploadOk == 0) {
   echo "Deine Datei wurde nicht hochgeladen.";
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+     
+ 
+      $date = date('d-m-y h:i:s');
+      $sql = "INSERT INTO MyGuests (Filename, Link, last_edit)
+      VALUES (' " . $target_file . "', '" . "./uploads/$target_file" . "', '" . $date . "')";
+    
     echo "Die Datei ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " wurde hochgeladen.";
+
+
   } else {
     echo "Es gab ein Fehler beim Hochladen.";
   }

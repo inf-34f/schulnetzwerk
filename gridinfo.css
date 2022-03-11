@@ -15,15 +15,17 @@
     padding-block: 1rem;
 
 
+
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
 
     grid-template-areas:
 
     'one one one two two'
     'one one one two two'
+    'three three three two two'
     'three three three two two'
     'three three three two two'
     'four four four two two'
@@ -43,7 +45,6 @@
         'one one one'
         'three three three'
         'three three three'
-        'three three three'
         'four four four'
         'four four four'
         /* 'four four four' */
@@ -58,11 +59,12 @@
 
 .test:nth-child(1) {
     grid-area: one;
+    background: transparent;
 }
 
 .test:nth-child(2) {
     grid-area: two;
-    background: gray;
+    /* background: gray; */
 }
 
 .test:nth-child(3) {
@@ -84,7 +86,7 @@
   width: 10%;
 }
 
-.img {
+/* .img {
     background-color: #777;
 
     background-image: url(img/droste-huelshoff-gymnasium.jpg);
@@ -98,7 +100,7 @@
     background-size: cover;
 
     background-attachment: fixed;
-}
+} */
 
 .img p {
     font-family: 'Dancing Script';
@@ -107,5 +109,9 @@
     rotate: -7deg;
     color: white;
     line-height: 5px;
+}
+
+.container {
+    box-shadow: 1px solid black;
 }
 
