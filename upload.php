@@ -8,7 +8,7 @@
 
         <link rel="icon" type="image/x-icon" href="icon.png">
 
-        <!-- CSS einbinden --> 
+        <!-- CSS einbinden -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="gridinfo.css">
@@ -83,59 +83,73 @@
 <?php
 
 
+if(isset($_POST['submit'])){
 
 
+  $target_dir = "uploads/";
+  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $uploadOk = 1;
+  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 
-
-
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-
-if(isset($_POST["submit"])) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if(isset($_POST["submit"])) {
     $uploadOk = 1;
-}
-
-
-if (file_exists($target_file)) {
-  echo "Die Datei existiert bereits";
-  $uploadOk = 0;
-}
-
-
-if ($_FILES["fileToUpload"]["size"] > 500000) {
-  echo "Deine Datei ist zu groß";
-  $uploadOk = 0;
-}
-
-
-if($imageFileType != "pdf" && $imageFileType != "pptx" && $imageFileType != "doc"
-&& $imageFileType != "xls" ) {
-  echo "Es sind nur Schuldatein erlaubt.";
-  $uploadOk = 0;
-}
-
-
-if ($uploadOk == 0) {
-  echo "Deine Datei wurde nicht hochgeladen.";
-} else {
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-     
- 
-      $date = date('d-m-y h:i:s');
-      $sql = "INSERT INTO MyGuests (Filename, Link, last_edit)
-      VALUES (' " . $target_file . "', '" . "./uploads/$target_file" . "', '" . $date . "')";
-    
-    echo "Die Datei ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " wurde hochgeladen.";
-
-
-  } else {
-    echo "Es gab ein Fehler beim Hochladen.";
   }
+
+
+  if (file_exists($target_file)) {
+    echo "Die Datei existiert bereits. ";
+    $uploadOk = 0;
+  }
+
+
+  if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Deine Datei ist zu groß. ";
+    $uploadOk = 0;
+  }
+
+
+  if($imageFileType != "pdf" && $imageFileType != "pptx" && $imageFileType != "doc"
+    && $imageFileType != "xls" ) {
+    echo "Es sind nur Schuldatein erlaubt. ";
+    $uploadOk = 0;
+  }
+
+
+  if ($uploadOk == 0) {
+    echo "Deine Datei wurde nicht hochgeladen.";
+  } else {
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
+
+      $date = date('d-m-y h:i:s');
+      $sql = "INSERT INTO files (Filename, Link, last_edit)
+      VALUES (' " . basename($_FILES["fileToUpload"]["name"]) . "', '" . "./uploads/$target_file" . "', '" . $date . "')";
+
+      if ($link->query($sql) === TRUE) {
+        echo "Die Datei ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " wurde hochgeladen.";
+      } else {
+        echo "Error: " . $sql . "<br>" . $link->error;
+      }
+
+
+
+
+
+
+
+    } else {
+      echo "Es gab ein Fehler beim Hochladen.";
+    }
+  }
+
+
 }
+
+
+
+
+
+
 ?>
 <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
