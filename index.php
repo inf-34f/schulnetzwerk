@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require("mysql.php"); ?>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -7,7 +8,7 @@
 
         <link rel="icon" type="image/x-icon" href="img/icon.png">
 
-        <!-- CSS einbinden --> 
+        <!-- CSS einbinden -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="gridinfo.css">
@@ -23,7 +24,7 @@
     if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
       $loggedin = true;
     }else{
-        $loggedin = false; 
+        $loggedin = false;
       }
     ?>
 
@@ -60,7 +61,7 @@
             </a>
         </li>
         <li class="list">
-        <?php 
+        <?php
 
 
         if(!$loggedin){
@@ -71,8 +72,8 @@
           $href="#";
         }
         ?>
-        
-        <a href="<?php echo $href;?>"> 
+
+        <a href="<?php echo $href;?>">
                 <span class="icon"><ion-icon name="contact"></ion-icon></span>
                 <span class="text">Login</span>
             </a>
@@ -99,7 +100,7 @@
               <section class="highlight-clean">
                 <div class="container">
                   <div class="intro">
-                    <h2 class="text-center">Willkommen<?php 
+                    <h2 class="text-center">Willkommen<?php
                     // $_SESSION["username"] = "Tom";
                     if ($loggedin == false)
                     echo("");
@@ -208,7 +209,24 @@
 
 
         <article class="test">
-            <div>
+          <?php
+          $sql = "SELECT Filename, Link, last_edit FROM files ORDER BY File_ID DESC LIMIT 3;";
+          $result = $link->query($sql);
+
+          $names = [];
+          while($row = mysqli_fetch_array($result)){
+            array_push($names, $row['Filename']);
+
+          }
+
+
+
+
+
+
+          ?>
+
+          <div>
               <section class="features-boxed">
                 <div class="container">
                   <div class="intro">
@@ -217,20 +235,20 @@
                   <div class="row justify-content-center features">
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
-                        <h3 class="name">testfile</h3>
-                        <p class="description">lul.pptx</p><a class="learn-more" href="./uploads/lul.pptx" download> <img src="download.png"></a>
+                        <h3 class="name">1</h3>
+                        <p class="description"><?php echo($names[0])?></p><a class="learn-more" href="./uploads/<?php echo($names[0])?>" download> <img src="download.png"></a>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">2</h3>
-                        <p class="description">2</p><a class="learn-more" href="./uploads/lul.pptx"><img src="download.png"></a>
+                        <p class="description"><?php echo($names[1])?></p><a class="learn-more" href="./uploads/<?php echo($names[1])?>"><img src="download.png"></a>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">3 </h3>
-                        <p class="description">3</p><a class="learn-more" href="./uploads/lul.pptx"><img src="download.png"></a>
+                        <p class="description"><?php echo($names[2])?></p><a class="learn-more" href="./uploads/<?php echo($names[2])?>"><img src="download.png"></a>
                       </div>
                     </div>
                   </div>
