@@ -101,9 +101,9 @@
                   <div class="intro">
                     <h2 class="text-center">Willkommen<?php 
                     // $_SESSION["username"] = "Tom";
-                    if (!$_SESSION)
+                    if ($loggedin == false)
                     echo("");
-                    else
+                    else if ($loggedin == true)
                     echo(" ".$_SESSION["username"].",");
                     ?> auf dem Schulnetzwerk der Droste </h2>
                   </div>
