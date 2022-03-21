@@ -110,7 +110,7 @@ if(isset($_POST['submit'])){
 
 
   if($imageFileType != "pdf" && $imageFileType != "pptx" && $imageFileType != "doc"
-    && $imageFileType != "xls" ) {
+    && $imageFileType != "xlsx" ) {
     echo "Es sind nur Schuldatein erlaubt. ";
     $uploadOk = 0;
   }

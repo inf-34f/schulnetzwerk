@@ -219,9 +219,13 @@
 
           }
 
+          function findfileicon($filenumber) {
+            global $names;
+            $ext = pathinfo("uploads/".$names[$filenumber], PATHINFO_EXTENSION);
+            echo "<img src='img/dateisymbole/".$ext.".png' "."width='100'>";
+                   }
 
-
-
+          
 
 
           ?>
@@ -236,19 +240,19 @@
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">1</h3>
-                        <p class="description"><?php echo($names[0])?></p><a class="learn-more" href="./uploads/<?php echo($names[0])?>" download> <img src="download.png"></a>
+                        <p class="description"><?php echo($names[0])?></p><a class="learn-more" href="./uploads/<?php echo($names[0])?>" download> <?php findfileicon(0) ?></a>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">2</h3>
-                        <p class="description"><?php echo($names[1])?></p><a class="learn-more" href="./uploads/<?php echo($names[1])?>"><img src="download.png"></a>
+                        <p class="description"><?php echo($names[1])?></p><a class="learn-more" href="./uploads/<?php echo($names[1])?>"><?php findfileicon(1) ?></a>
                       </div>
                     </div>
                     <div class="col-sm-6 col-md-5 col-lg-4 item">
                       <div class="box">
                         <h3 class="name">3 </h3>
-                        <p class="description"><?php echo($names[2])?></p><a class="learn-more" href="./uploads/<?php echo($names[2])?>"><img src="download.png"></a>
+                        <p class="description"><?php echo($names[2])?></p><a class="learn-more" href="./uploads/<?php echo($names[2])?>"><?php findfileicon(2) ?></a>
                       </div>
                     </div>
                   </div>
